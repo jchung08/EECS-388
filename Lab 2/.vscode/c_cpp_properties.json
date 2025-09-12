@@ -8,11 +8,11 @@
         {
             "name": "PlatformIO",
             "includePath": [
-                "C:/Users/jchun/projects/EECS 388/Lab 2/include",
-                "C:/Users/jchun/projects/EECS 388/Lab 2/src",
+                "C:/Users/jchun/projects/EECS-388/Lab 2/include",
+                "C:/Users/jchun/projects/EECS-388/Lab 2/src",
                 "C:/Users/jchun/.platformio/packages/framework-arduino-avr/cores/arduino",
                 "C:/Users/jchun/.platformio/packages/framework-arduino-avr/variants/standard",
-                "C:/Users/jchun/projects/EECS 388/Lab 2/.pio/libdeps/uno/Unity/src",
+                "C:/Users/jchun/projects/EECS-388/Lab 2/.pio/libdeps/uno/Unity/src",
                 "C:/Users/jchun/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
                 "C:/Users/jchun/.platformio/packages/framework-arduino-avr/libraries/HID/src",
                 "C:/Users/jchun/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
@@ -23,11 +23,11 @@
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
                 "path": [
-                    "C:/Users/jchun/projects/EECS 388/Lab 2/include",
-                    "C:/Users/jchun/projects/EECS 388/Lab 2/src",
+                    "C:/Users/jchun/projects/EECS-388/Lab 2/include",
+                    "C:/Users/jchun/projects/EECS-388/Lab 2/src",
                     "C:/Users/jchun/.platformio/packages/framework-arduino-avr/cores/arduino",
                     "C:/Users/jchun/.platformio/packages/framework-arduino-avr/variants/standard",
-                    "C:/Users/jchun/projects/EECS 388/Lab 2/.pio/libdeps/uno/Unity/src",
+                    "C:/Users/jchun/projects/EECS-388/Lab 2/.pio/libdeps/uno/Unity/src",
                     "C:/Users/jchun/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
                     "C:/Users/jchun/.platformio/packages/framework-arduino-avr/libraries/HID/src",
                     "C:/Users/jchun/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
