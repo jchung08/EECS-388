@@ -55,7 +55,28 @@ while( 1 )
     */
     if ('Y' == ser_read() && 'Y' == ser_read()) 
         {
-        /* 
+            uint8_t dist_L, dist_H;
+            dist_L = ser_read();
+            dist_H = ser_read();
+
+            dist = (dist_H << 8) | dist_L;
+
+            for(int i = 0; i < 5; i++) {
+                ser_read();
+            }
+        
+            if (dist < 50){
+                gpio_write(GPIO_13, ON);
+                gpio_write(GPIO_12, OFF);
+            } else {
+                gpio_write(GPIO_13, OFF);
+                gpio_write(GPIO_12, ON);
+            }
+
+            ser_printf("Distance: %d cm", dist);
+            
+            /* 
+            
             Task 1.3: 
             - turn on the red LED if the distance measured is less than 50 cm. 
             - otherwise turn on the green LED 
@@ -66,6 +87,7 @@ while( 1 )
             - Helpful guide for printing with variadic function similiar to printf()
             - https://en.cppreference.com/w/cpp/io/c/fprintf
         */
+            delay_ms(100);
         }
     }
 
