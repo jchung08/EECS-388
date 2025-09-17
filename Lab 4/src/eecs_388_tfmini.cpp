@@ -55,17 +55,27 @@ while( 1 )
     */
     if ('Y' == ser_read() && 'Y' == ser_read()) 
         {
-            uint8_t dist_L, dist_H;
-            dist_L = ser_read();
-            dist_H = ser_read();
+            uint8_t byte1 = 'Y';
+            uint8_t byte2 = 'Y';
+            uint8_t dist_L = ser_read();
+            uint8_t dist_H = ser_read();
+            uint8_t Strength_L = ser_read();
+            uint8_t Strength_H = ser_read();
+            uint8_t RSVD = ser_read();
+            uint8_t Quality = ser_read();
+            uint8_t Chksum = ser_read();
 
+            uint16_t calculated_checksum = byte1 + byte2 +dist_L + dist_H + Strength_L + Strength_H + RSVD + Quality;
+
+            if (Chksum == (uint8_t)calculated_checksum){
+            
             dist = (dist_H << 8) | dist_L;
 
-            for(int i = 0; i < 5; i++) {
+           /*/ for(int i = 0; i < 5; i++) {
                 ser_read();
-            }
-        
-            if (dist < 50){
+            }*/
+
+            if (dist < 75){
                 gpio_write(GPIO_13, ON);
                 gpio_write(GPIO_12, OFF);
             } else {
@@ -73,12 +83,12 @@ while( 1 )
                 gpio_write(GPIO_12, ON);
             }
 
-            ser_printf("Distance: %d cm", dist);
-            
+             ser_printf("Distance: %d cm (Checksum OK)", dist);
+    
             /* 
             
             Task 1.3: 
-            - turn on the red LED if the distance measured is less than 50 cm. 
+            - turn on the red LED if the distance measured is less than 75 cm. 
             - otherwise turn on the green LED 
 
             - print the measured value to the console (i.e. the serial monitor) 
@@ -86,10 +96,9 @@ while( 1 )
             
             - Helpful guide for printing with variadic function similiar to printf()
             - https://en.cppreference.com/w/cpp/io/c/fprintf
-        */
-            delay_ms(100);
+        */    
+            }
         }
     }
-
 return;
 }
